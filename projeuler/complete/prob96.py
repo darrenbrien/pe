@@ -47,6 +47,6 @@ def emps(g):
     return [(i,j) for i in range(0,9) for j in range(0,9) if g[i][j] == 0]
 
 def solved(g):
-    return len(emps(g)) == 0
+    return not any(map(lambda x: 0 in x, g))
 
 print(sum(map(lambda x: int(''.join(map(str,x[0][0:3]))),[solve(r) for r in read()])))
