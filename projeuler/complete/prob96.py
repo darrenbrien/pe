@@ -17,7 +17,7 @@ def read():
 def solve(g):
     if(solved(g)):
         return g
-    x, *xs = emps(g)
+    x = next(emps(g))
     i, j = x
     for c in pos_vals(g, i, j):
         ng = list(map(list, g))
@@ -44,7 +44,7 @@ def pos_vals(g, i , j):
     return set(vals) - set(grid(g, i, j))
 
 def emps(g):
-    return [(i,j) for i in range(0,9) for j in range(0,9) if g[i][j] == 0]
+    return ((i,j) for i in range(0,9) for j in range(0,9) if g[i][j] == 0)
 
 def solved(g):
     return not any(map(lambda x: 0 in x, g))
