@@ -33,10 +33,10 @@ def pos_vals(g, i , j):
         end_i = start_i + 3
         start_j = idx[j//3]
         end_j = start_j + 3
-        l = [g[i][start_j:end_j] for i in range(start_i, end_i)]
-        return [y for x in l for y in x]
+        l = (g[i][start_j:end_j] for i in range(start_i, end_i))
+        return (y for x in l for y in x)
     def col(g, j):
-        return [row[j] for row in g]
+        return (row[j] for row in g)
     vals = set(list(range(1,10)))
     vals = vals - set(g[i])
     vals = set(vals) - set(col(g,j))
