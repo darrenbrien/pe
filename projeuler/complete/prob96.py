@@ -17,10 +17,9 @@ def read():
 def solve(g):
     if(solved(g)):
         return g
-    x = next(emps(g))
-    i, j = x
+    i, j = next(emps(g))
+    ng = list(map(list, g))
     for c in pos_vals(g, i, j):
-        ng = list(map(list, g))
         ng[i][j] = c
         res = solve(ng)
         if(res):
