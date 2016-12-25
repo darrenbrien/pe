@@ -17,8 +17,6 @@ def read():
 def solve(g):
     if(solved(g)):
         return g
-    if(not valid(g)):
-        return None
     x, *xs = emps(g)
     i, j = x
     for c in pos_vals(g, i, j):
