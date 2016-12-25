@@ -46,9 +46,6 @@ def pos_vals(g, i , j):
 def emps(g):
     return [(i,j) for i in range(0,9) for j in range(0,9) if g[i][j] == 0]
 
-def valid(g):
-    return all(map(lambda x: pos_vals(g, *x), emps(g)))
-
 def solved(g):
     return len(emps(g)) == 0
 
